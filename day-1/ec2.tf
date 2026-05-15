@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "eu-north-1"  
+    region = "ap-south-1"  
 }
 
 resource "aws_instance" "my_instance"{
@@ -11,4 +11,4 @@ resource "aws_instance" "my_instance"{
         Name = "my_instance"
         env = "dev"
     }
-}
+}   
