@@ -60,7 +60,7 @@ data "aws_vpc" "my_vpc" {
 }
 
 variable "image_id" {
-    default = "ami-05d62b9bc5a6ca605"
+    default = "ami-07a00cf47dbbc844c"
 }
 
 variable "instance_type" {
@@ -72,7 +72,7 @@ variable "key_pair" {
 }
 
 variable "sg_id" {
-    default = "sg-089796f61e66ccb82"
+    default = "sg-082cd8b58e65bbb0a"
 }
 
 output "public_ip" {
