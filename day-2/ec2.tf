@@ -68,7 +68,7 @@ variable "instance_type" {
 }
 
 variable "key_pair" {
-    default = "global"
+    default = "npm"
 }
 
 variable "sg_id" {
