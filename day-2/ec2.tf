@@ -18,6 +18,7 @@ resource "aws_instance" "my_instance" {
     yum install httpd -y
     sudo systemctl start httpd
     sudo systemctl enable httpd
+    echo "Hello from Terraform EC2" > /var/www/html/index.html
     EOF
 }
 
@@ -51,7 +52,7 @@ resource "aws_security_group" "my_sg" {
         cidr_blocks = ["0.0.0.0/0"]
         from_port = 0
         to_port = 0
-        protocol = -1
+        protocol = "-1"
     }
 }
 
