@@ -73,7 +73,7 @@ variable "key_pair" {
 }
 
 variable "sg_id" {
-    default = "sg-082cd8b58e65bbb0a"
+    default = "sg-0959e7ab0aab55e68"
 }
 
 output "public_ip" {
