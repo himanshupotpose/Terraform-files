@@ -13,12 +13,12 @@ resource "aws_instance" "my_instance" {
     }
 
 
-    user_data = <<EOF
+    user_data = <<EOF                   
     #!/bin/bash
     apt update -y
     apt install apache2 -y
-    sudo systemctl start httpd
-    sudo systemctl enable httpd
+    systemctl start apache2
+    systemctl enable apache2
     echo "Hello from Terraform EC2" > /var/www/html/index.html
     EOF
 }
