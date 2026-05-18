@@ -13,12 +13,13 @@ resource "aws_instance" "my_instance" {
     }
 
 
-    user_data = <<EOF                   
+    user_data = <<EOF
+                       
     #!/bin/bash
-    apt update -y
-    apt install apache2 -y
-    systemctl start apache2
-    systemctl enable apache2
+    #!/bin/bash
+    yum install httpd -y
+    systemctl start httpd
+    systemctl enable httpd
     echo "Hello from Terraform EC2" > /var/www/html/index.html
     EOF
 }
@@ -62,7 +63,7 @@ data "aws_vpc" "my_vpc" {
 }
 
 variable "image_id" {
-    default = "ami-07a00cf47dbbc844c"
+    default = "ami-09ed39e30153c3bf9"
 }
 
 variable "instance_type" {
