@@ -15,7 +15,8 @@ resource "aws_instance" "my_instance" {
 
     user_data = <<EOF
     #!/bin/bash
-    yum install httpd -y
+    apt update -y
+    apt install apache2
     sudo systemctl start httpd
     sudo systemctl enable httpd
     echo "Hello from Terraform EC2" > /var/www/html/index.html
@@ -72,7 +73,7 @@ variable "key_pair" {
     default = "npm"
 }
 
-variable "sg_id" {
+variable "sg_id" { 
     default = "sg-0959e7ab0aab55e68"
 }
 
