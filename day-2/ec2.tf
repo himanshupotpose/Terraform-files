@@ -14,8 +14,7 @@ resource "aws_instance" "my_instance" {
 
 
     user_data = <<EOF
-                       
-    #!/bin/bash
+
     #!/bin/bash
     yum install httpd -y
     systemctl start httpd
