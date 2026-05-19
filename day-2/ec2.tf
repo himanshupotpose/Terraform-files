@@ -19,12 +19,12 @@ resource "aws_instance" "my_instance" {
     env  = "dev"
   }
 
-  user_data = <<-EOF
+user_data = <<-EOF
 #!/bin/bash
 yum update -y
 
 # nginx install
-amazon-linux-extras install nginx1 -y
+dnf install nginx -y
 
 # nginx start
 systemctl start nginx
