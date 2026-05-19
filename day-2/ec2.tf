@@ -22,10 +22,17 @@ resource "aws_instance" "my_instance" {
   user_data = <<-EOF
 #!/bin/bash
 yum update -y
-yum install httpd -y
-systemctl start httpd
-systemctl enable httpd
-echo "Hello from Terraform EC2" > /var/www/html/index.html
+
+# nginx install
+amazon-linux-extras install nginx1 -y
+
+# nginx start
+systemctl start nginx
+systemctl enable nginx
+
+# custom html page
+echo "Hello from Terraform NGINX Server" > /usr/share/nginx/html/index.html
+
 EOF
 }
 
