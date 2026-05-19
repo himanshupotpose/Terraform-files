@@ -10,6 +10,7 @@ resource "aws_instance" "my_instance" {
   associate_public_ip_address = true
 
   vpc_security_group_ids = [
+    var.sg_id,
     aws_security_group.my_sg.id
   ]
 
@@ -85,9 +86,9 @@ variable "key_pair" {
   default = "npm"
 }
 
-# variable "sg_id" {
-#  default = "sg-0959e7ab0aab55e68"
-# }
+variable "sg_id" {
+  default = "sg-0959e7ab0aab55e68"
+}
 
 output "public_ip" {
   value = aws_instance.my_instance.public_ip
