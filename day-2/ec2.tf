@@ -19,20 +19,13 @@ resource "aws_instance" "my_instance" {
     env  = "dev"
   }
 
-user_data = <<-EOF
+  user_data = <<-EOF
 #!/bin/bash
 yum update -y
-
-# nginx install
-dnf install nginx -y
-
-# nginx start
-systemctl start nginx
-systemctl enable nginx
-
-# custom html page
-echo "Hello from Terraform NGINX Server" > /usr/share/nginx/html/index.html
-
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+echo "Hello from Terraform EC2" > /var/www/html/index.html
 EOF
 }
 
@@ -92,10 +85,7 @@ variable "sg_id" {
 
 output "public_ip" {
   value = aws_instance.my_instance.public_ip
-}
-
-
-
+} 
 
 
 
@@ -120,13 +110,20 @@ output "public_ip" {
 #     env  = "dev"
 #   }
 
-#   user_data = <<-EOF
+# user_data = <<-EOF
 # #!/bin/bash
 # yum update -y
-# yum install httpd -y
-# systemctl start httpd
-# systemctl enable httpd
-# echo "Hello from Terraform EC2" > /var/www/html/index.html
+
+# # nginx install
+# dnf install nginx -y
+
+# # nginx start
+# systemctl start nginx
+# systemctl enable nginx
+
+# # custom html page
+# echo "Hello from Terraform NGINX Server" > /usr/share/nginx/html/index.html
+
 # EOF
 # }
 
