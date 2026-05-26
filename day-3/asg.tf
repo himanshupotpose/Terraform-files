@@ -6,6 +6,7 @@ resource "aws_autoscaling_group" "home_asg" {
     min_size = 1
     launch_template {
         id = aws_launch_template.home_launch_template.id
+        version = "$Latest"
     }
 
 }
@@ -30,6 +31,7 @@ resource "aws_autoscaling_group" "mobile_asg" {
     min_size = 1
     launch_template {
         id = aws_launch_template.mobile_launch_template.id
+        version = "$Latest"
     }
 
 }
@@ -54,6 +56,7 @@ resource "aws_autoscaling_group" "laptop_asg" {
     min_size = 1
     launch_template {
         id = aws_launch_template.laptop_launch_template.id
+        version = "$Latest"
     }
 
 }
