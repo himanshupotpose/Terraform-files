@@ -48,7 +48,7 @@ resource "aws_autoscaling_policy" "mobile_asg_policy" {
 
 resource "aws_autoscaling_group" "laptop_asg" {
     name = "${var.project}-${var.env}-laptop-asg"
-    availability_zones = ["us-east-1a", "us-east-1b"]
+    availability_zones = ["ap-south-1a", "ap-south-1b"]
     desired_capacity = 1
     max_size = 2
     min_size = 1
