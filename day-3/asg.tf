@@ -1,4 +1,4 @@
-resource "aws_autoscaling_group" "home_asg" {
+resource "aws_autoscaling_group" "home_asg" {       // this is home ASG resource.
     name = "${var.project}-${var.env}-home-asg"     // dynamic ASG name .
     availability_zones = ["ap-south-1a", "ap-south-1b"]  // ASG will be created in 2 availability zones for high availability.
     desired_capacity = 1

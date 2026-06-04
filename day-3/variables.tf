@@ -1,3 +1,4 @@
+# This variables.tf file defines the input variables for the Terraform configuration.
 variable "image_id" {
   default     = "ami-07a00cf47dbbc844c"
 }
