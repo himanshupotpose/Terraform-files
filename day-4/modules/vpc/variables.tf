@@ -15,9 +15,9 @@ default = "10.0.1.0/24"
 }
 
 variable private_az {
-default = "us-east-1a"
+default = "ap-south-1a"
 }
 
 variable public_az {
-default = "us-east-1b"
+default = "ap-south-1b"
 }
