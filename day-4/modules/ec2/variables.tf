@@ -1,13 +1,13 @@
 variable "image_id" {
-default     = "ami-07a00cf47dbbc844c"
+default     = "ami-0b6c6ebed2801a5cb"
 }
 
 variable "instance_type" {
-default     = "t3.micro"
+default     = "t2.micro"
 }
 
 variable "key_name" {
-    default = "npm"
+    default = "new-key"
 }
 
 variable "private_subnet_id" {}
