@@ -13,7 +13,7 @@ resource "aws_instance" "my_instance" {
     ami = "ami-07a00cf47dbbc844c"
     instance_type = "t3.small"
     key_name = "npm"
-    vpc_security_group_ids = ["sg-082cd8b58e65bbb0a"]
+    vpc_security_group_ids = ["sg-0959e7ab0aab55e68"]
     tags = {
         Name = "my_instance"
         env = "dev"
