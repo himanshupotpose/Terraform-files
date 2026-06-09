@@ -19,3 +19,5 @@ resource "aws_instance" "my_instance" {
         env = "dev"
     }
 }
+
+// terraform init -reconfigure
